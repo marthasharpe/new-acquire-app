@@ -4,10 +4,10 @@ export const DELETE_COMPANY = 'DELETE_COMPANY';
 export const EDIT_COMPANY = 'EDIT_COMPANY';
 export const LOADING_COMPANIES = 'LOADING_COMPANIES';
 
-export const addCompany = (values) => {
+export const addCompany = info => {
     return {
         type: ADD_COMPANY,
-        values
+        info
     }
 }
 

@@ -3,9 +3,9 @@ import { Form, Button, Container } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { addCompany } from '../actions/actionCreators';
 
-const CompanyDetails = (props) => {
+const AddCompany = (props) => {
     
-    const [values, setValues] = React.useState({
+    const [info, setInfo] = React.useState({
         company: {
             name: '',
             industry: '',
@@ -26,27 +26,27 @@ const CompanyDetails = (props) => {
     })
 
     const handleChange = (e) => {
-        setValues({
-            ...values,
+        setInfo({
+            ...info,
             [e.target.name]: {
-                ...values[e.target.name],
+                ...info[e.target.name],
                 [e.target.id]: e.target.value
             },
         })
-        console.log(values)
+        console.log(info)
     }
 
     const handleStatusChange = (e) => {
-        setValues({
-            ...values,
+        setInfo({
+            ...info,
             status: e.target.value,
         })
-        console.log(values)
+        console.log(info)
     }
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        props.addCompany({...values, id: values.company.name})
+        props.addCompany({...info, id: info.company.name})
     }
 
     return (
@@ -58,7 +58,7 @@ const CompanyDetails = (props) => {
                     name="company"
                     id="name"
                     placeholder="eg. Google"
-                    value={values.company.name}
+                    value={info.company.name}
                     onChange={handleChange}
                     required
                     />
@@ -69,7 +69,7 @@ const CompanyDetails = (props) => {
                     name="company"
                     id="industry"
                     placeholder="eg. technology"
-                    value={values.company.industry}
+                    value={info.company.industry}
                     onChange={handleChange}
                     required
                     />
@@ -80,7 +80,7 @@ const CompanyDetails = (props) => {
                     name="company"
                     id="yearFounded"
                     placeholder="eg. 1990"
-                    value={values.company.yearFounded}
+                    value={info.company.yearFounded}
                     onChange={handleChange}
                     required
                     />
@@ -91,7 +91,7 @@ const CompanyDetails = (props) => {
                     name="contact"
                     id="firstName"
                     placeholder="First Name"
-                    value={values.contact.firstName}
+                    value={info.contact.firstName}
                     onChange={handleChange}
                     required
                     />
@@ -102,7 +102,7 @@ const CompanyDetails = (props) => {
                     name="contact"
                     id="lastName"
                     placeholder="Last Name"
-                    value={values.contact.lastName}
+                    value={info.contact.lastName}
                     onChange={handleChange}
                     required
                     />
@@ -114,7 +114,7 @@ const CompanyDetails = (props) => {
                     id="email"
                     placeholder="example@email.com"
                     type="email"
-                    value={values.contact.email}
+                    value={info.contact.email}
                     onChange={handleChange}
                     required
                     />
@@ -126,7 +126,7 @@ const CompanyDetails = (props) => {
                     id="phone"
                     type="phone"
                     placeholder="eg. 888-777-6666"
-                    value={values.contact.phone}
+                    value={info.contact.phone}
                     onChange={handleChange}
                     required
                     />        
@@ -137,7 +137,7 @@ const CompanyDetails = (props) => {
                     name="finances"
                     id="grossIncome"
                     placeholder="eg. 15000000"
-                    value={values.finances.grossIncome}
+                    value={info.finances.grossIncome}
                     onChange={handleChange}
                     required
                     />
@@ -148,7 +148,7 @@ const CompanyDetails = (props) => {
                     name="finances"
                     id="expenses"
                     placeholder="eg. 30000000"
-                    value={values.finances.expenses}
+                    value={info.finances.expenses}
                     onChange={handleChange}
                     required
                     />
@@ -159,7 +159,7 @@ const CompanyDetails = (props) => {
                     name="finances"
                     id="netProfit"
                     placeholder="eg. 15000000"
-                    value={values.finances.netProfit}
+                    value={info.finances.netProfit}
                     onChange={handleChange}
                     required
                     />                        
@@ -171,7 +171,7 @@ const CompanyDetails = (props) => {
                     label="Researching"
                     name="status"
                     value="Researching"
-                    checked={values.status==="Researching"}
+                    checked={info.status==="Researching"}
                     onChange={handleStatusChange}
                     inline
                     required
@@ -181,7 +181,7 @@ const CompanyDetails = (props) => {
                     label="Pending"
                     name="status"
                     value="Pending"
-                    checked={values.status==="Pending"}
+                    checked={info.status==="Pending"}
                     onChange={handleStatusChange}
                     inline
                     required
@@ -191,7 +191,7 @@ const CompanyDetails = (props) => {
                     label="Approved"
                     name="status"
                     value="Approved"
-                    checked={values.status==="Approved"}
+                    checked={info.status==="Approved"}
                     onChange={handleStatusChange}
                     inline
                     required
@@ -201,7 +201,7 @@ const CompanyDetails = (props) => {
                     label="Declined"
                     name="status"
                     value="Declined"
-                    checked={values.status==="Declined"}
+                    checked={info.status==="Declined"}
                     onChange={handleStatusChange}
                     inline
                     required
@@ -215,8 +215,12 @@ const CompanyDetails = (props) => {
     )
 }
 
+const mapStateToProps = ({ companies }) => ({
+    companies
+})
+
 const mapDispatchToProps = {
     addCompany
 }
 
-export default connect(null, mapDispatchToProps)(CompanyDetails);
+export default connect(mapStateToProps, mapDispatchToProps)(AddCompany);
