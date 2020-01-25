@@ -1,0 +1,9 @@
+const ADD_COMPANY = 'ADD_COMPANY';
+const GET_COMPANIES = 'GET_COMPANIES';
+const DELETE_COMPANY = 'DELETE_COMPANY';
+const EDIT_COMPANY = 'EDIT_COMPANY';
+const LOADING_COMPANIES = 'LOADING_COMPANIES';
+
+export const addCompany = () => {
+    
+}

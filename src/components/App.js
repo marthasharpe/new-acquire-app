@@ -1,9 +1,12 @@
 import React from 'react';
+import CompanyDetails from './CompanyDetails';
+import AppBar from './AppBar';
 
 function App() {
   return (
     <div className="App">
-      <h1>Acquire</h1>
+      <AppBar />
+      <CompanyDetails />
     </div>
   );
 }

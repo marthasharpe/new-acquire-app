@@ -8,6 +8,8 @@ import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers/rootReducer';
+//import uuid from 'react-uuid';
+//import axios from 'axios';
 
 const store = createStore(rootReducer, composeWithDevTools(
     applyMiddleware(thunk)
