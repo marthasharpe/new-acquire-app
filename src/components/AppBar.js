@@ -7,8 +7,9 @@ const AppBar = () => {
             <Navbar.Brand href="#home">Acquire</Navbar.Brand>
             <Navbar.Collapse className="justify-content-end">
                 <Nav>
-                    <Nav.Link href="#newComany">New Company</Nav.Link>
-                    <Nav.Link href="#table">Table</Nav.Link>
+                    <Nav.Link href="/tiles">Company Tiles</Nav.Link>
+                    <Nav.Link href="/add">Add Company</Nav.Link>
+                    <Nav.Link href="/table">Table</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
