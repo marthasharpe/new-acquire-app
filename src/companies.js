@@ -1,6 +1,6 @@
 export const dummyCompanies = [
     {
-        id: 'The Prancing Pony',
+        id: '1234',
         company: {
             name: 'The Prancing Pony',
             industry: 'hospitality',
@@ -20,7 +20,7 @@ export const dummyCompanies = [
         status: 'Researching',
     },
     {
-        id: 'The Green Dragon',
+        id: '5678',
         company: {
             name: 'The Green Dragon',
             industry: 'hospitality',

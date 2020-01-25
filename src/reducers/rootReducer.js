@@ -23,7 +23,8 @@ const rootReducer = (state = initialState, action) => {
             }
         case EDIT_COMPANY:
             return {
-                ...state
+                ...state,
+                companies: [...state.companies, action.info]
             }
         default:
             return state;

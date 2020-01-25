@@ -23,9 +23,9 @@ export const deleteCompany = (index) => {
     }
 }
 
-export const editCompany = (values) => {
+export const editCompany = (info) => {
     return {
         type: EDIT_COMPANY,
-        values
+        info
     }
 }
