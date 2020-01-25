@@ -2,7 +2,6 @@ export const ADD_COMPANY = 'ADD_COMPANY';
 export const GET_COMPANIES = 'GET_COMPANIES';
 export const DELETE_COMPANY = 'DELETE_COMPANY';
 export const EDIT_COMPANY = 'EDIT_COMPANY';
-export const LOADING_COMPANIES = 'LOADING_COMPANIES';
 
 export const addCompany = info => {
     return {
@@ -17,9 +16,10 @@ export const getCompanies = () => {
     }
 }
 
-export const deleteCompany = () => {
+export const deleteCompany = (index) => {
     return {
         type: DELETE_COMPANY,
+        index
     }
 }
 

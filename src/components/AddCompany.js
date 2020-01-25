@@ -2,6 +2,7 @@ import React from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { addCompany } from '../actions/actionCreators';
+import uuid from 'react-uuid'
 
 const AddCompany = (props) => {
     
@@ -33,7 +34,6 @@ const AddCompany = (props) => {
                 [e.target.id]: e.target.value
             },
         })
-        console.log(info)
     }
 
     const handleStatusChange = (e) => {
@@ -41,12 +41,11 @@ const AddCompany = (props) => {
             ...info,
             status: e.target.value,
         })
-        console.log(info)
     }
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        props.addCompany({...info, id: info.company.name})
+        props.addCompany({...info, id: uuid()})
     }
 
     return (

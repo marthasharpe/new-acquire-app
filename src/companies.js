@@ -1,4 +1,4 @@
-const dummyCompanies = [
+export const dummyCompanies = [
     {
         id: 'The Prancing Pony',
         company: {
@@ -18,5 +18,25 @@ const dummyCompanies = [
             netProfit: '20000',
         },
         status: 'Researching',
-    }
+    },
+    {
+        id: 'The Green Dragon',
+        company: {
+            name: 'The Green Dragon',
+            industry: 'hospitality',
+            yearFounded: '1791',
+        },
+        contact: {
+            firstName: 'Meriadoc',
+            lastName: 'Brandybuck',
+            email: 'merry@brandy.com',
+            phone: '333-444-5555',
+        },
+        finances: {
+            grossIncome: '2000',
+            expenses: '1000',
+            netProfit: '1000',
+        },
+        status: 'Pending',
+    },
 ];

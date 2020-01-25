@@ -1,30 +1,12 @@
 import {
-    ADD_COMPANY
+    ADD_COMPANY,
+    DELETE_COMPANY,
+    EDIT_COMPANY,
 } from '../actions/actionCreators';
+import { dummyCompanies } from '../companies.js';
 
 const initialState = {
-    companies: [
-        {
-        id: 'The Prancing Pony',
-        company: {
-            name: 'The Prancing Pony',
-            industry: 'hospitality',
-            yearFounded: '1778',
-        },
-        contact: {
-            firstName: 'Barliman',
-            lastName: 'Butterbur',
-            email: 'butter@bur.com',
-            phone: '888-432-2343',
-        },
-        finances: {
-            grossIncome: '30000',
-            expenses: '10000',
-            netProfit: '20000',
-        },
-        status: 'Researching',
-    }
-],
+    companies: [...dummyCompanies],
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -33,6 +15,15 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 companies: [...state.companies, action.info]
+            }
+        case DELETE_COMPANY:
+            return {
+                ...state,
+                companies: state.companies.filter((company, index) => index !== action.index),
+            }
+        case EDIT_COMPANY:
+            return {
+                ...state
             }
         default:
             return state;
