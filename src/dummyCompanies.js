@@ -1,7 +1,7 @@
 export const dummyCompanies = [
     {
         id: '1234',
-        company: {
+        info: {
             name: 'The Prancing Pony',
             industry: 'hospitality',
             yearFounded: '1778',
@@ -21,7 +21,7 @@ export const dummyCompanies = [
     },
     {
         id: '5678',
-        company: {
+        info: {
             name: 'The Green Dragon',
             industry: 'hospitality',
             yearFounded: '1791',

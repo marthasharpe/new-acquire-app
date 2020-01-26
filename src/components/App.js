@@ -1,9 +1,9 @@
 import React from 'react';
 import AddCompany from './AddCompany';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import AppBar from './AppBar';
-import CompanyTiles from './CompanyTiles';
-import Home from './Home';
+import AppBar from './appBar/AppBar';
+import CompanyTiles from './companyTiles/CompanyTiles';
+import Home from './home/Home';
 import EditCompany from './EditCompany';
 
 function App() {

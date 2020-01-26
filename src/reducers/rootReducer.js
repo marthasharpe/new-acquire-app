@@ -3,7 +3,7 @@ import {
     DELETE_COMPANY,
     EDIT_COMPANY,
 } from '../actions/actionCreators';
-import { dummyCompanies } from '../companies.js';
+import { dummyCompanies } from '../dummyCompanies.js';
 
 const initialState = {
     companies: [...dummyCompanies],

@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
-import { Row, Col, Container, Button, Accordion, Card } from 'react-bootstrap';
-import { deleteCompany } from '../actions/actionCreators';
+import { Row, Col, Container, Button, Accordion, Card, Badge } from 'react-bootstrap';
+import { deleteCompany } from './../../actions/actionCreators';
 
 const CompanyTiles = (props) => {
-    if (props.companies === []) {
+    if (props.companies.length === 0) {
         return (
             <Container>
                 <h3>You have no companies on file.</h3>
@@ -17,12 +17,14 @@ const CompanyTiles = (props) => {
             <Accordion style={{marginTop: 50}}>
                 {props.companies.map((company, index) => (
                     <Card key={company.id}>
-                        <Accordion.Toggle
-                            as={Button} variant="link"
-                            eventKey={props.companies.indexOf(company)}
-                            >
-                            {company.company.name}
-                        </Accordion.Toggle>
+                        <Card.Header>
+                            <Accordion.Toggle
+                                as={Button} variant="link"
+                                eventKey={props.companies.indexOf(company)}
+                                >
+                                {company.info.name}<Badge variant="secondary">{company.status}</Badge>
+                            </Accordion.Toggle>
+                        </Card.Header>
                         <Accordion.Collapse
                             eventKey={props.companies.indexOf(company)}
                             >
@@ -30,9 +32,9 @@ const CompanyTiles = (props) => {
                                 <Row>
                                     <Col>
                                     <Card.Title>Company:</Card.Title>
-                                        <Card.Text>Industry: {company.company.industry}</Card.Text>
-                                        <Card.Text>Founded: {company.company.yearFounded}</Card.Text>
-                                        <Card.Text>Status: {company.status}</Card.Text>
+                                        <Card.Text>Name: {company.info.name}</Card.Text>
+                                        <Card.Text>Industry: {company.info.industry}</Card.Text>
+                                        <Card.Text>Founded: {company.info.yearFounded}</Card.Text>
                                     </Col>
                                     <Col>
                                     <Card.Title>Contact:</Card.Title>
@@ -49,13 +51,9 @@ const CompanyTiles = (props) => {
                                 </Row>
                                 <Row>
                                     <Col style={{marginTop: 20}}>
-                                        <Button
-                                            variant="success"
-                                            >
-                                            <Link to={"/edit/:"+company.id} style={{textDecoration: 'none',color: 'white'}}>
-                                                Edit
-                                            </Link>
-                                        </Button>    
+                                        <Link to={"/edit/:"+company.id}>
+                                            Edit
+                                        </Link>
                                         <Button
                                             onClick={() => props.deleteCompany(index)}
                                             variant="danger"
