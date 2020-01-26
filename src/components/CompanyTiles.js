@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { Row, Col, Container, Button, Accordion, Card } from 'react-bootstrap';
 import { deleteCompany } from '../actions/actionCreators';
 
@@ -31,7 +31,7 @@ const CompanyTiles = (props) => {
                                     <Col>
                                     <Card.Title>Company:</Card.Title>
                                         <Card.Text>Industry: {company.company.industry}</Card.Text>
-                                        <Card.Text>Year Founded: {company.company.yearFounded}</Card.Text>
+                                        <Card.Text>Founded: {company.company.yearFounded}</Card.Text>
                                         <Card.Text>Status: {company.status}</Card.Text>
                                     </Col>
                                     <Col>
@@ -49,13 +49,13 @@ const CompanyTiles = (props) => {
                                 </Row>
                                 <Row>
                                     <Col style={{marginTop: 20}}>
-                                        <Link to={"/edit/:"+company.id}>
                                         <Button
                                             variant="success"
                                             >
-                                            Edit
-                                        </Button>
-                                        </Link>
+                                            <Link to={"/edit/:"+company.id} style={{textDecoration: 'none',color: 'white'}}>
+                                                Edit
+                                            </Link>
+                                        </Button>    
                                         <Button
                                             onClick={() => props.deleteCompany(index)}
                                             variant="danger"
@@ -82,4 +82,4 @@ const mapDispatchToProps = {
     deleteCompany,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CompanyTiles);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CompanyTiles));

@@ -19,12 +19,22 @@ const rootReducer = (state = initialState, action) => {
         case DELETE_COMPANY:
             return {
                 ...state,
-                companies: state.companies.filter((company, index) => index !== action.index),
+                companies: state.companies.filter(
+                    (company, index) => index !== action.index
+                ),
             }
         case EDIT_COMPANY:
             return {
                 ...state,
-                companies: [...state.companies, action.info]
+                companies: state.companies.map(company => {
+                    if (company.id === action.info.id) {
+                        return {
+                            ...action.info
+                        }
+                    } else {
+                        return company;
+                    }
+                })
             }
         default:
             return state;

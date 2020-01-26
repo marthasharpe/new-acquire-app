@@ -25,10 +25,9 @@ const EditCompany = (props) => {
     })
 
     React.useEffect(() => {
-        const chosenCompany = props.companies.filter(
+        const company = props.companies.find(
             company => `:${company.id}` === props.match.params.id
         );
-        const company = chosenCompany[0];
         setInfo({
             id: company.id,
             company: {

@@ -1,14 +1,15 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const AppBar = () => {
     return (
-        <Navbar bg="dark" variant="dark">
-            <Navbar.Brand href="/">Acquire</Navbar.Brand>
+        <Navbar bg="dark" variant="dark" sticky="top">
+            <Navbar.Brand><Link to="/" style={{textDecoration: 'none', color: 'white'}}>Acquire</Link></Navbar.Brand>
             <Navbar.Collapse className="justify-content-end">
                 <Nav>
-                    <Nav.Link href="/add">Add Company</Nav.Link>
-                    <Nav.Link href="/tiles">See Companies</Nav.Link>
+                    <Nav.Link><Link to="/add" style={{textDecoration: 'none', color: 'white'}}>Add Company</Link></Nav.Link>
+                    <Nav.Link><Link to="/tiles" style={{textDecoration: 'none', color: 'white'}}>See Companies</Link></Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
