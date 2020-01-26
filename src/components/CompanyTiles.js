@@ -18,7 +18,7 @@ const CompanyTiles = (props) => {
                 {props.companies.map((company, index) => (
                     <Card key={company.id}>
                         <Accordion.Toggle
-                            as={Card.Header} variant="link"
+                            as={Button} variant="link"
                             eventKey={props.companies.indexOf(company)}
                             >
                             {company.company.name}

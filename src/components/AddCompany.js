@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Button, Container } from 'react-bootstrap';
+import { Form, Button, Container, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { addCompany } from '../actions/actionCreators';
 import uuid from 'react-uuid'
@@ -51,8 +51,9 @@ const AddCompany = (props) => {
     return (
         <Container style={{marginTop: 50}}>
         <Form onSubmit={handleSubmit}>
-            <Form.Group>
-                <Form.Label>Company Name</Form.Label>
+            <Form.Row>
+            <Form.Group as={Col}>
+                <Form.Text>Company Name</Form.Text>
                 <Form.Control
                     name="company"
                     id="name"
@@ -62,8 +63,8 @@ const AddCompany = (props) => {
                     required
                     />
             </Form.Group>
-            <Form.Group>
-                <Form.Label>Industry</Form.Label>
+            <Form.Group as={Col}>
+                <Form.Text>Industry</Form.Text>
                 <Form.Control
                     name="company"
                     id="industry"
@@ -73,8 +74,8 @@ const AddCompany = (props) => {
                     required
                     />
             </Form.Group>
-            <Form.Group>
-                <Form.Label>Year Founded</Form.Label>
+            <Form.Group as={Col}>
+                <Form.Text>Year Founded</Form.Text>
                 <Form.Control
                     name="company"
                     id="yearFounded"
@@ -84,8 +85,10 @@ const AddCompany = (props) => {
                     required
                     />
             </Form.Group>
-            <Form.Group>
-                <Form.Label>Contact First Name</Form.Label>
+            </Form.Row>
+            <Form.Row>
+            <Form.Group as={Col}>
+                <Form.Text>Contact First Name</Form.Text>
                 <Form.Control
                     name="contact"
                     id="firstName"
@@ -95,8 +98,8 @@ const AddCompany = (props) => {
                     required
                     />
             </Form.Group>
-            <Form.Group>
-                <Form.Label>Contact Last Name</Form.Label>
+            <Form.Group as={Col}>
+                <Form.Text>Contact Last Name</Form.Text>
                 <Form.Control
                     name="contact"
                     id="lastName"
@@ -106,8 +109,10 @@ const AddCompany = (props) => {
                     required
                     />
             </Form.Group>
-            <Form.Group>
-                <Form.Label>Contact Email</Form.Label>
+            </Form.Row>
+            <Form.Row>
+            <Form.Group as={Col}>
+                <Form.Text>Contact Email</Form.Text>
                 <Form.Control
                     name="contact"
                     id="email"
@@ -118,8 +123,8 @@ const AddCompany = (props) => {
                     required
                     />
             </Form.Group>
-            <Form.Group>                    
-                <Form.Label>Contact Phone Number</Form.Label>
+            <Form.Group as={Col}>                    
+                <Form.Text>Contact Phone Number</Form.Text>
                 <Form.Control
                     name="contact"
                     id="phone"
@@ -130,8 +135,10 @@ const AddCompany = (props) => {
                     required
                     />        
             </Form.Group>
-            <Form.Group>
-                <Form.Label>Gross Income</Form.Label>
+            </Form.Row>
+            <Form.Row>
+            <Form.Group as={Col}>
+                <Form.Text>Gross Income</Form.Text>
                 <Form.Control
                     name="finances"
                     id="grossIncome"
@@ -141,8 +148,8 @@ const AddCompany = (props) => {
                     required
                     />
             </Form.Group>
-            <Form.Group>
-                <Form.Label>Operating Expenses</Form.Label>
+            <Form.Group as={Col}>
+                <Form.Text>Operating Expenses</Form.Text>
                 <Form.Control
                     name="finances"
                     id="expenses"
@@ -152,8 +159,8 @@ const AddCompany = (props) => {
                     required
                     />
             </Form.Group>
-            <Form.Group>
-                <Form.Label>Net Profit/Loss</Form.Label>
+            <Form.Group as={Col}>
+                <Form.Text>Net Profit/Loss</Form.Text>
                 <Form.Control
                     name="finances"
                     id="netProfit"
@@ -163,7 +170,8 @@ const AddCompany = (props) => {
                     required
                     />                        
             </Form.Group>
-            <Form.Label>Status</Form.Label>
+            </Form.Row>
+            <Form.Text>Status</Form.Text>
             <Form.Group id="status">
                 <Form.Check
                     type="radio"

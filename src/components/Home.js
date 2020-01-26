@@ -6,22 +6,22 @@ const Home = () => {
     return (
         <Jumbotron>
             <Row className="justify-content-center">
-                <h1>Welcome to Acquire!</h1>
+                <h1 style={{textAlign: "center"}}>Welcome to Acquire!</h1>
             </Row>
             <Row className="justify-content-center">
-                <p>
+                <p style={{textAlign: "center"}}>
                     Save, track, and compare prospective acquisitions.
                 </p>
             </Row>
             <Row style={{marginTop: 20}} className="justify-content-center">
-                <Col md={{span: 2}}>
+                <Col xs={{span: 4}} sm={{span: 2}}>
                     <Button variant="primary">
                         <Link to="/add" style={{textDecoration: 'none', color: 'white'}}>
-                            Add a New Company
+                            Add New Company
                         </Link>
                     </Button>
                 </Col>
-                <Col md={{span: 2}}>
+                <Col xs={{span: 4}} sm={{span: 2}}>
                     <Button variant="primary">
                         <Link to="/tiles" style={{textDecoration: 'none', color: 'white'}}>
                             See Your Companies
