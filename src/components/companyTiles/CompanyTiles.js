@@ -1,15 +1,34 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
-import { Row, Col, Container, Button, Accordion, Card, Badge } from 'react-bootstrap';
+import { Row, Col, Container, Button, Accordion, Card, Badge, Jumbotron } from 'react-bootstrap';
 import { deleteCompany } from './../../actions/actionCreators';
+import './CompanyTiles.css';
+
+const linkStyle = {
+    color: "white",
+    textDecoration: "none",
+}
 
 const CompanyTiles = (props) => {
     if (props.companies.length === 0) {
         return (
-            <Container>
-                <h3>You have no companies on file.</h3>
-            </Container>
+            <Jumbotron>
+                <Row className="justify-content-center">
+                    <h3 style={{textAlign: "center"}}>You have no companies on file.</h3>
+                </Row>
+                <Row
+                style={{marginTop: 20}}
+                className="justify-content-center">
+                <Col xs={{span: 6}} sm={{span: 4}}>
+                    <div className="new-company">
+                    <Link to="/add" style={linkStyle}>
+                        + Add New Company
+                    </Link>
+                    </div>
+                </Col>
+            </Row>
+            </Jumbotron>
         )
     } else {
         return (
@@ -22,7 +41,8 @@ const CompanyTiles = (props) => {
                                 as={Button} variant="link"
                                 eventKey={props.companies.indexOf(company)}
                                 >
-                                {company.info.name}<Badge variant="secondary">{company.status}</Badge>
+                                {company.info.name}
+                                <Badge variant="secondary">{company.status}</Badge>
                             </Accordion.Toggle>
                         </Card.Header>
                         <Accordion.Collapse
@@ -67,6 +87,17 @@ const CompanyTiles = (props) => {
                     </Card>
                 ))}
             </Accordion>
+            <Row
+                style={{marginTop: 20}}
+                className="justify-content-center">
+                <Col xs={{span: 6}} sm={{span: 4}}>
+                    <div className="new-company">
+                    <Link to="/add" style={linkStyle}>
+                        + Add New Company
+                    </Link>
+                    </div>
+                </Col>
+            </Row>
             </Container>
         );
     }

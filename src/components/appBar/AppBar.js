@@ -4,15 +4,21 @@ import { Link } from 'react-router-dom';
 
 const AppBar = () => {
     return (
-        <Navbar bg="dark" variant="dark" sticky="top">
-            <Link to="/"><Navbar.Brand>Acquire App</Navbar.Brand></Link>
-            <Navbar.Toggle />
-            <Navbar.Collapse className="justify-content-end">
+        <Navbar
+            bg="dark"
+            variant="dark"
+            sticky="top"
+            className="justify-content-between"
+            >
+            <Navbar.Brand>Acquire App</Navbar.Brand>
                 <Nav>
-                    <Link to="/add">Add Company</Link>
-                    <Link to="/tiles">See Companies</Link>
+                    <Link
+                        style={{color: "white", textDecoration: "none"}}
+                        to="/"
+                        >
+                        Home
+                    </Link>
                 </Nav>
-            </Navbar.Collapse>
         </Navbar>
     )
 }
