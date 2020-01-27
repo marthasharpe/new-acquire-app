@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col, Jumbotron } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import Signature from '../Signature/Signature';
 
 const linkStyle = {
     color: "white",
@@ -10,6 +11,7 @@ const linkStyle = {
 
 const Home = () => {
     return (
+        <React.Fragment>
         <Jumbotron>
             <Row className="justify-content-center">
                 <h1 style={{textAlign: "center"}}>Your Acquire App!</h1>
@@ -36,6 +38,8 @@ const Home = () => {
                 </Col>
             </Row>
         </Jumbotron>
+        <Signature />
+        </React.Fragment>
     )
 }
 
