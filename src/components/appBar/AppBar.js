@@ -1,7 +1,8 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import logo from './handshake-icon.png';
+import logo from '../handshake-icon.png';
+import './AppBar.css';
 
 const AppBar = () => {
     return (
@@ -19,14 +20,25 @@ const AppBar = () => {
                     className="d-inline-block align-top"
                     alt="Acquire logo"
                     />
-                Acquire App
+                <Link
+                    style={{color: "white", textDecoration: "none"}}
+                    to="/"
+                    >
+                    Acquire App
+                </Link>
             </Navbar.Brand>
                 <Nav>
                     <Link
-                        style={{color: "white", textDecoration: "none"}}
-                        to="/"
+                        className="link"
+                        to="/tiles"
                         >
-                        Home
+                        See Companies
+                    </Link>
+                    <Link
+                        className="link"
+                        to="/add"
+                        >
+                        Add Company
                     </Link>
                 </Nav>
         </Navbar>

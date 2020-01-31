@@ -40,11 +40,11 @@ const CompanyTiles = (props) => {
                 style={{marginTop: 20}}
                 className="justify-content-center">
                 <Col xs={{span: 6}} sm={{span: 4}}>
-                    <div className="new-company">
                     <Link to="/add" style={linkStyle}>
-                        + Add New Company
+                        <div className="new-company">
+                            + Add New Company
+                        </div>
                     </Link>
-                    </div>
                 </Col>
             </Row>
             <Accordion style={{marginTop: 50}}>

@@ -45,11 +45,11 @@ const AccordionCards = (props) => {
                             </Col>
                         </Row>
                         <Row className="justify-content-center" style={{marginTop: 20}}>
-                            <div className="edit">
                             <Link to={"/edit/:"+company.id} style={linkStyle}>
-                                Edit
+                                <div className="edit">
+                                    Edit
+                                </div>
                             </Link>
-                            </div>
                             <Button
                                 onClick={() => props.deleteCompany(index)}
                                 variant="danger"

@@ -167,7 +167,7 @@ const CompanyForm = (props) => {
                     required
                     />
             </Form.Group>
-            <Button type="submit">
+            <Button type="submit" variant="success">
                 Submit
             </Button>
         </Form>

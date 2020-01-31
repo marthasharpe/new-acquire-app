@@ -1,0 +1,10 @@
+.link {
+    text-decoration: none;
+    color: white;
+    padding: 0 10px;
+}
+
+.link:hover {
+    text-decoration: none;
+    color: gray;
+}
